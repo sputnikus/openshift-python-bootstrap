@@ -2,7 +2,7 @@
 
 ## Why
 
-There's no official documentation from Red Hat about how to write your WSGI application for OpenShift. So I decided to create bootstrap script to prepare your application directory (currently Flask only) for deployment.
+There's no official documentation from Red Hat about how to write your WSGI application for [OpenShift](https://openshift.redhat.com/app/express "OpenShift Express"). So I decided to create bootstrap script to prepare your application directory (currently [Flask](http://flask.pocoo.org/ "Flask microframework") only) for deployment.
 
 ## Usage
 
