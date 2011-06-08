@@ -55,7 +55,7 @@ def index():
     <body>
         <h1>This is generated testing page</h1>
         <div id = 'content'>{% block content %}{% endblock %}</div>
-        <footer>Created by OpenShift bootstrap for Python, which is unoficial tool created by Martin Putniorz</footer>  
+        <footer>Created by OpenShift bootstrap for Python, which is unofficial tool created by Martin Putniorz</footer>  
     </body>
 </html>
 """)
