@@ -23,6 +23,9 @@ def after_install(home_dir, options):
     """
     After install steps - copying files and creating application
     script
+
+    @param home_dir: virtualenv location
+    @param options: passed commandline options
     """
 
     if options.app_name == None:
@@ -53,6 +56,14 @@ def after_install(home_dir, options):
 """)
 
 def install_flask(home_dir, app_name, pip):
+    """
+    Installs basic Flask stack for OpenShift
+     
+    @param home_dir: virtualenv location
+    @param app_name: Inner name of application
+    @param pip: Location of pip
+    """
+
     subprocess.call([pip, 'install', 'flask'])
     app_dir = os.path.join(home_dir, '..', 'libs', app_name)
     os.makedirs(app_dir)
@@ -125,9 +136,18 @@ if __name__ == '__main__':
     os.chmod(application, stat.S_IRWXU|stat.S_IRGRP|stat.S_IROTH)
 
 def install_django(home_dir, app_name, pip):
+    """
+    Installs basic Django stack for OpenShift
+
+    @param home_dir: virtualenv location
+    @param app_name: Inner name of application
+    @param pip: Location of pip
+    """
+
     subprocess.call([pip, 'install', 'django'])
     libs = os.path.join(home_dir, '..', 'libs')
     root = os.getcwd()
+    # django-admin.py needs to be executed in destinated directory
     os.chdir(libs)
     admin = os.path.join('..', home_dir, 'bin', 'django-admin.py')
     subprocess.call([admin, 'startproject', app_name])
