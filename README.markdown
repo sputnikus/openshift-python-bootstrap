@@ -27,7 +27,7 @@ And if you want to test your app locally
 **Django**:
 
      cd <app directory>/libs/<app name>
-     python manage.py runserver<center></center><center></center> 
+     python manage.py runserver
 
 ## Thanks
 
